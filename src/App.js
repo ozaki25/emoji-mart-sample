@@ -13,12 +13,14 @@ function App() {
   };
   return (
     <>
-      <button onClick={() => setEmojiType('apple')}>Apple</button>
-      <button onClick={() => setEmojiType('google')}>Google</button>
-      <button onClick={() => setEmojiType('twitter')}>Twitter</button>
-      <button onClick={() => setEmojiType('facebook')}>Facebook</button>
-      <button onClick={() => setEmojiType('emojione')}>emojione</button>
-      <button onClick={() => setEmojiType('messenger')}>messenger</button>
+      <p>
+        <button onClick={() => setEmojiType('apple')}>Apple</button>
+        <button onClick={() => setEmojiType('google')}>Google</button>
+        <button onClick={() => setEmojiType('twitter')}>Twitter</button>
+        <button onClick={() => setEmojiType('facebook')}>Facebook</button>
+        <button onClick={() => setEmojiType('emojione')}>emojione</button>
+        <button onClick={() => setEmojiType('messenger')}>messenger</button>
+      </p>
       {emojiType && <EmojiPicker onSelect={onSelect} set={emojiType} />}
       {emojiList.length ? (
         <p>

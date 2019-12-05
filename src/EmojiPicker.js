@@ -5,7 +5,7 @@ import 'emoji-mart/css/emoji-mart.css';
 function EmojiPicker({ onSelect, set }) {
   console.log(set);
   return (
-    <div>
+    <div style={{ position: 'absolute', zIndex: '1' }}>
       <Picker
         onSelect={emoji => onSelect({ ...emoji, set })}
         set={set}
