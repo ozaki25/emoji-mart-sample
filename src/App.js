@@ -1,28 +1,27 @@
 import React, { useState } from 'react';
-import 'emoji-mart/css/emoji-mart.css';
-import { Emoji, Picker } from 'emoji-mart';
+import { Emoji } from 'emoji-mart';
+import EmojiPicker from './EmojiPicker';
 
 function App() {
+  const [emojiType, setEmojiType] = useState(null);
   const [emojiList, setEmojiList] = useState([]);
-  const [open, setOpen] = useState(false);
-  const onClick = () => setOpen(true);
+
   const onSelect = emoji => {
     console.log({ emoji });
     setEmojiList([...emojiList, emoji]);
-    setOpen(false);
+    setEmojiType(null);
   };
   return (
     <>
-      <button onClick={onClick}>Open</button>
-      {open && (
-        <div>
-          <Picker onSelect={onSelect} />
-        </div>
-      )}
+      <button onClick={() => setEmojiType('apple')}>Apple</button>
+      <button onClick={() => setEmojiType('google')}>Google</button>
+      <button onClick={() => setEmojiType('twitter')}>Twitter</button>
+      <button onClick={() => setEmojiType('emojione')}>emojione</button>
+      {emojiType && <EmojiPicker onSelect={onSelect} set={emojiType} />}
       {emojiList.length ? (
         <p>
-          {emojiList.map(({ id }, i) => (
-            <Emoji emoji={id} size={24} key={i} />
+          {emojiList.map(({ id, set }, i) => (
+            <Emoji emoji={id} size={24} key={i} set={set} />
           ))}
         </p>
       ) : null}
