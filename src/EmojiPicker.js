@@ -7,6 +7,7 @@ function EmojiPicker({ onSelect, set }) {
   return (
     <div style={{ position: 'absolute', zIndex: '1' }}>
       <Picker
+        include={['recent', 'nature', 'people']}
         onSelect={emoji => onSelect({ ...emoji, set })}
         set={set}
         i18n={{
@@ -25,6 +26,9 @@ function EmojiPicker({ onSelect, set }) {
             custom: 'カスタム',
           },
         }}
+        showSkinTones={false}
+        emojiTooltip
+        title="絵文字"
       />
     </div>
   );
