@@ -16,6 +16,7 @@ function App() {
       <button onClick={() => setEmojiType('apple')}>Apple</button>
       <button onClick={() => setEmojiType('google')}>Google</button>
       <button onClick={() => setEmojiType('twitter')}>Twitter</button>
+      <button onClick={() => setEmojiType('facebook')}>Facebook</button>
       <button onClick={() => setEmojiType('emojione')}>emojione</button>
       <button onClick={() => setEmojiType('messenger')}>messenger</button>
       {emojiType && <EmojiPicker onSelect={onSelect} set={emojiType} />}
